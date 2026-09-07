@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Deep portfolio case study: Oracle EPBCS planning and budgeting model with drivers, versions, forms, and EDM alignment." />
+  <meta name="theme-color" content="#070b12" />
+  <title>EPM Planning &amp; Budgeting Model | Kavya Project</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="page-project is-loaded">
+  <div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="orb-canvas" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" data-magnetic>
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Kavya <em>Project</em></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="sr-only">Menu</span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#expertise">Expertise</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#learning">Learning</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <a class="nav-cta" href="../index.html#contact" data-magnetic>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="project-hero">
+      <div class="shell project-hero-inner" data-reveal>
+        <p class="breadcrumb-nav"><a href="../index.html#projects">&larr; Back to all projects</a></p>
+        <div class="project-kicker">
+          <span class="badge">Case study 04</span>
+          <span>Portfolio knowledge project</span>
+        </div>
+        <h1>EPM Planning &amp; Budgeting Model</h1>
+        <p class="section-lede">
+          An EPBCS model design for annual budgeting and rolling forecasts — driver dictionary, version strategy, form/calc sequencing, and EDM-aligned dimensions.
+        </p>
+        <p class="case-note">Knowledge / portfolio case study only. Not employment history or named client work.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="#objective" data-magnetic>Read full case study</a>
+          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>Contact Kavya</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell case-grid">
+      <nav class="case-toc" aria-label="On this page" data-reveal>
+        <a href="#objective">Objective</a>
+        <a href="#model">Model design</a>
+        <a href="#drivers">Drivers</a>
+        <a href="#cycle">Budget cycle</a>
+        <a href="#edm">EDM alignment</a>
+        <a href="#modules">Modules</a>
+        <a href="#deliverables">Deliverables</a>
+        <a href="#outcomes">Outcomes</a>
+      </nav>
+
+      <article class="case-block" id="objective" data-reveal>
+        <h2>Objective</h2>
+        <p>
+          Design a planning model that answers real leadership questions each cycle — without turning EPBCS into a giant spreadsheet replica. Drivers, versions, and dimensions stay controlled and explainable.
+        </p>
+      </article>
+
+      <article class="case-block" id="model" data-reveal>
+        <h2>Model design outline</h2>
+        <ul>
+          <li>Application / cube intent for financial planning and forecast</li>
+          <li>Separation of seed data, inputs, calculations, and reporting views</li>
+          <li>Scenario and version strategy: Budget, Forecast, What-if</li>
+          <li>Form design principles that reduce clutter and force driver entry</li>
+          <li>Calculation sequencing and review dashboards</li>
+        </ul>
+        <dl class="decision-list">
+          <div>
+            <dt>Plan by question, not by every GL account</dt>
+            <dd>Start from decisions leadership makes, then map the minimum drivers and accounts required.</dd>
+          </div>
+          <div>
+            <dt>Versions are governance, not convenience copies</dt>
+            <dd>Freeze points and ownership rules define when a version becomes official.</dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="case-block" id="drivers" data-reveal>
+        <h2>Driver dictionary (examples)</h2>
+        <ul>
+          <li>Revenue: volume × price / mix assumptions by product or channel</li>
+          <li>Workforce: headcount, timing, and average cost drivers</li>
+          <li>Opex: run-rate vs initiative spend with clear owner codes</li>
+          <li>Capex / depreciation touchpoints where planning must stay consistent with assets thinking</li>
+        </ul>
+        <p>Each driver includes definition, owner, refresh frequency, and calculation dependency.</p>
+      </article>
+
+      <article class="case-block" id="cycle" data-reveal>
+        <h2>Budget / forecast cycle</h2>
+        <ol class="phase-list">
+          <li><span class="phase-num">01</span><div><strong>Seed &amp; open</strong> Load actuals / baselines and open input window.</div></li>
+          <li><span class="phase-num">02</span><div><strong>Driver entry</strong> Business owners enter drivers in controlled forms.</div></li>
+          <li><span class="phase-num">03</span><div><strong>Calculate &amp; review</strong> Rules run; dashboards highlight outliers.</div></li>
+          <li><span class="phase-num">04</span><div><strong>Challenge &amp; revise</strong> Finance partners challenge assumptions.</div></li>
+          <li><span class="phase-num">05</span><div><strong>Freeze &amp; publish</strong> Version freeze, variance pack, and distribution.</div></li>
+        </ol>
+      </article>
+
+      <article class="case-block" id="edm" data-reveal>
+        <h2>EDM alignment</h2>
+        <ul>
+          <li>Account / entity / product dimensions governed for consistency with Fusion structures</li>
+          <li>Change request thinking: who can add members and when hierarchy updates land</li>
+          <li>Reduce planning vs actuals mapping pain by design, not by month-end cleanup</li>
+        </ul>
+      </article>
+
+      <article class="case-block" id="modules" data-reveal>
+        <h2>Oracle modules in focus</h2>
+        <div class="module-chips">
+          <span>EPBCS</span>
+          <span>Planning</span>
+          <span>Budgeting</span>
+          <span>Forecast</span>
+          <span>Forms &amp; Dashboards</span>
+          <span>Business Rules</span>
+          <span>EDM</span>
+        </div>
+      </article>
+
+      <article class="case-block" id="deliverables" data-reveal>
+        <h2>Deliverables</h2>
+        <div class="deliverable-grid">
+          <span>Model design outline</span>
+          <span>Driver dictionary</span>
+          <span>Version / scenario matrix</span>
+          <span>Form inventory</span>
+          <span>Calc sequence map</span>
+          <span>Budget cycle calendar</span>
+          <span>EDM alignment notes</span>
+          <span>Review dashboard sketch</span>
+        </div>
+      </article>
+
+      <article class="case-block" id="outcomes" data-reveal>
+        <h2>Outcomes</h2>
+        <ul>
+          <li>A planning blueprint that shows model maturity, not a feature list</li>
+          <li>Driver and version frameworks ready for workshop discussion</li>
+          <li>Clean handoff language into consolidation and narrative reporting</li>
+        </ul>
+      </article>
+
+      <aside class="project-cta-band" data-reveal>
+        <h2>Discuss planning model design</h2>
+        <p>Open to conversations about EPBCS model structure, drivers, and forecast cycles.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="mailto:kavyareddybindhu4@gmail.com" data-magnetic>Email Kavya</a>
+          <a class="btn btn-ghost" href="../index.html#projects" data-magnetic>Back to projects</a>
+        </div>
+      </aside>
+    </section>
+
+    <div class="shell project-nav">
+      <a class="btn btn-ghost" href="period-close-intercompany-reporting.html" data-magnetic>← Previous</a>
+      <a class="btn btn-primary" href="fccs-consolidation-close.html" data-magnetic>Next: FCCS →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="footer-brand">Kavya Project</p>
+        <p class="footer-note">Knowledge portfolio · Oracle Fusion Financials &amp; EPM Cloud</p>
+      </div>
+      <p class="footer-copy">© <span data-year></span> Kavya Reddy</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

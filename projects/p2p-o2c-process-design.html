@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Deep portfolio case study: Oracle Fusion Procure-to-Pay and Order-to-Cash process design with controls, exceptions, and handoffs." />
+  <meta name="theme-color" content="#070b12" />
+  <title>P2P &amp; O2C Process Design | Kavya Project</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="page-project is-loaded">
+  <div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="orb-canvas" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" data-magnetic>
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Kavya <em>Project</em></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="sr-only">Menu</span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#expertise">Expertise</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#learning">Learning</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <a class="nav-cta" href="../index.html#contact" data-magnetic>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="project-hero">
+      <div class="shell project-hero-inner" data-reveal>
+        <p class="breadcrumb-nav"><a href="../index.html#projects">&larr; Back to all projects</a></p>
+        <div class="project-kicker">
+          <span class="badge">Case study 02</span>
+          <span>Portfolio knowledge project</span>
+        </div>
+        <h1>Procure-to-Pay &amp; Order-to-Cash Process Design</h1>
+        <p class="section-lede">
+          Dual end-to-end process blueprints for Fusion Payables and Receivables — happy path, exception path, approvals, holds, cash touchpoints, and finance handoffs that stay usable every day.
+        </p>
+        <p class="case-note">Knowledge / portfolio case study only. Not employment history or named client work.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="#objective" data-magnetic>Read full case study</a>
+          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>Contact Kavya</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell case-grid">
+      <nav class="case-toc" aria-label="On this page" data-reveal>
+        <a href="#objective">Objective</a>
+        <a href="#context">Context</a>
+        <a href="#scope">Scope</a>
+        <a href="#p2p">P2P design</a>
+        <a href="#o2c">O2C design</a>
+        <a href="#approach">Approach</a>
+        <a href="#controls">Controls</a>
+        <a href="#modules">Modules</a>
+        <a href="#deliverables">Deliverables</a>
+        <a href="#outcomes">Outcomes</a>
+      </nav>
+
+      <article class="case-block" id="objective" data-reveal>
+        <h2>Objective</h2>
+        <p>
+          Design practical Procure-to-Pay and Order-to-Cash operating models that reduce ambiguity between procurement, AP, AR, treasury/cash, and controllers — while protecting invoice quality, billing accuracy, and period integrity.
+        </p>
+      </article>
+
+      <article class="case-block" id="context" data-reveal>
+        <h2>Business context (generic scenario)</h2>
+        <p>
+          Finance needs one shared language for how supplier invoices and customer invoices move from intake to settlement, including what happens when documents fail match, approvals stall, or cash cannot be applied cleanly.
+        </p>
+        <ul>
+          <li>AP volume includes PO and non-PO invoices with different risk profiles</li>
+          <li>AR needs consistent billing, credit memo, and receipt application patterns</li>
+          <li>Month-end suffers when exceptions are informal and undocumented</li>
+          <li>GL foundation from Case Study 01 is assumed as the CoA / ledger baseline</li>
+        </ul>
+      </article>
+
+      <article class="case-block" id="scope" data-reveal>
+        <h2>Scope</h2>
+        <ul>
+          <li>Supplier invoice intake → validation → approval → payment readiness</li>
+          <li>Match rules, holds, tolerances, and exception routing</li>
+          <li>Customer invoicing → adjustments → receipt application</li>
+          <li>Credit memos, disputes, and unapplied cash handling patterns</li>
+          <li>Cross-process dependencies with GL, cash management, and close calendar</li>
+          <li>UAT-style scenario list for happy path and exception path</li>
+        </ul>
+      </article>
+
+      <article class="case-block" id="p2p" data-reveal>
+        <h2>P2P design highlights</h2>
+        <h3>Happy path</h3>
+        <ol>
+          <li>Supplier / site readiness and invoice intake channel defined</li>
+          <li>Invoice validation against PO / receipt / amount rules where applicable</li>
+          <li>Approval routing by amount, account, or business unit policy</li>
+          <li>Hold release criteria documented before payment batching</li>
+          <li>Payment readiness checks and GL accounting confirmation</li>
+        </ol>
+        <h3>Exception path</h3>
+        <ul>
+          <li>Price / quantity / receipt mismatches with named resolvers</li>
+          <li>Missing tax or distribution details with reject vs hold rules</li>
+          <li>Duplicate invoice detection and investigation steps</li>
+          <li>Escalation timing when approvals exceed SLA</li>
+        </ul>
+      </article>
+
+      <article class="case-block" id="o2c" data-reveal>
+        <h2>O2C design highlights</h2>
+        <h3>Happy path</h3>
+        <ol>
+          <li>Customer / bill-to readiness and invoice generation standards</li>
+          <li>Invoice distribution and dispute intake channel</li>
+          <li>Receipt creation and application rules (auto vs manual)</li>
+          <li>Credit memo / adjustment governance</li>
+          <li>Unapplied and on-account cash aging review</li>
+        </ol>
+        <h3>Exception path</h3>
+        <ul>
+          <li>Short pays and partial applications with follow-up owners</li>
+          <li>Misapplied cash correction steps</li>
+          <li>Billing disputes that must block aggressive collection actions</li>
+          <li>Period-end cutover rules for invoices and receipts</li>
+        </ul>
+      </article>
+
+      <article class="case-block" id="approach" data-reveal>
+        <h2>Approach</h2>
+        <ol class="phase-list">
+          <li><span class="phase-num">01</span><div><strong>Map current language</strong> Document how teams describe invoice, hold, approval, and cash steps today.</div></li>
+          <li><span class="phase-num">02</span><div><strong>Design happy path first</strong> Lock clean flows before branching into exceptions.</div></li>
+          <li><span class="phase-num">03</span><div><strong>Build exception matrix</strong> Reason, owner, SLA, and period impact for each major exception.</div></li>
+          <li><span class="phase-num">04</span><div><strong>Align to CoA / ledger</strong> Confirm distributions and accounting touchpoints match foundation blueprint.</div></li>
+          <li><span class="phase-num">05</span><div><strong>Write UAT scripts</strong> Convert process maps into testable scenarios finance can execute.</div></li>
+        </ol>
+      </article>
+
+      <article class="case-block" id="controls" data-reveal>
+        <h2>Controls &amp; risks</h2>
+        <ul>
+          <li>Approval thresholds and segregation of duties called out explicitly</li>
+          <li>Hold reasons standardized so analytics and aging stay meaningful</li>
+          <li>Cash application rules prevent silent on-account buildup</li>
+          <li>Risk: shadow spreadsheets outside Fusion — mitigated by process ownership and exception SLAs</li>
+          <li>Risk: period integrity broken by late AP/AR activity — mitigated by close cutover rules</li>
+        </ul>
+      </article>
+
+      <article class="case-block" id="modules" data-reveal>
+        <h2>Oracle modules in focus</h2>
+        <div class="module-chips">
+          <span>Payables</span>
+          <span>Procure-to-Pay</span>
+          <span>Receivables</span>
+          <span>Order-to-Cash</span>
+          <span>Approvals</span>
+          <span>Holds</span>
+          <span>Cash Application</span>
+          <span>General Ledger</span>
+        </div>
+      </article>
+
+      <article class="case-block" id="deliverables" data-reveal>
+        <h2>Deliverables</h2>
+        <div class="deliverable-grid">
+          <span>P2P swimlane process map</span>
+          <span>O2C swimlane process map</span>
+          <span>Exception &amp; hold matrix</span>
+          <span>Approval threshold sheet</span>
+          <span>Cash application rules note</span>
+          <span>UAT scenario pack</span>
+          <span>Close cutover checklist</span>
+          <span>Handoff RACI (AP/AR/Cash/GL)</span>
+        </div>
+      </article>
+
+      <article class="case-block" id="outcomes" data-reveal>
+        <h2>Outcomes</h2>
+        <ul>
+          <li>Two complete operational designs that show end-to-end finance process thinking</li>
+          <li>Exception handling that looks implementation-ready, not ideal-path only</li>
+          <li>Clear bridge from transactional flows into period close and reporting quality</li>
+        </ul>
+      </article>
+
+      <aside class="project-cta-band" data-reveal>
+        <h2>Discuss P2P / O2C design</h2>
+        <p>Happy to walk through process maps, exception matrices, and UAT scenarios.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="mailto:kavyareddybindhu4@gmail.com" data-magnetic>Email Kavya</a>
+          <a class="btn btn-ghost" href="../index.html#projects" data-magnetic>Back to projects</a>
+        </div>
+      </aside>
+    </section>
+
+    <div class="shell project-nav">
+      <a class="btn btn-ghost" href="fusion-financials-blueprint.html" data-magnetic>← Previous</a>
+      <a class="btn btn-primary" href="period-close-intercompany-reporting.html" data-magnetic>Next: Close &amp; Reporting →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="footer-brand">Kavya Project</p>
+        <p class="footer-note">Knowledge portfolio · Oracle Fusion Financials &amp; EPM Cloud</p>
+      </div>
+      <p class="footer-copy">© <span data-year></span> Kavya Reddy</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

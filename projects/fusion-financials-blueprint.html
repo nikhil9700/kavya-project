@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Deep portfolio case study: Oracle Fusion Financials implementation blueprint — CoA, ledgers, calendars, period close, controls, and reporting readiness." />
+  <meta name="theme-color" content="#070b12" />
+  <title>Fusion Financials Implementation Blueprint | Kavya Project</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="page-project is-loaded">
+  <div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="orb-canvas" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" data-magnetic>
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Kavya <em>Project</em></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="sr-only">Menu</span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#expertise">Expertise</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#learning">Learning</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <a class="nav-cta" href="../index.html#contact" data-magnetic>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="project-hero">
+      <div class="shell project-hero-inner" data-reveal>
+        <p class="breadcrumb-nav"><a href="../index.html#projects">&larr; Back to all projects</a></p>
+        <div class="project-kicker">
+          <span class="badge">Case study 01</span>
+          <span>Portfolio knowledge project</span>
+        </div>
+        <h1>Fusion Financials Implementation Blueprint</h1>
+        <p class="section-lede">
+          A complete foundation design for Oracle Fusion Financials — Chart of Accounts, ledgers, calendars, period status, journal standards, and close readiness — built so every later module can land cleanly.
+        </p>
+        <p class="case-note">
+          Knowledge / portfolio case study only. Not employment history, not a named client engagement, and not a certification claim.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="#objective" data-magnetic>Read full case study</a>
+          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>Contact Kavya</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell case-grid">
+      <nav class="case-toc" aria-label="On this page" data-reveal>
+        <a href="#objective">Objective</a>
+        <a href="#context">Context</a>
+        <a href="#scope">Scope</a>
+        <a href="#approach">Approach</a>
+        <a href="#decisions">Design decisions</a>
+        <a href="#walkthrough">Walkthrough</a>
+        <a href="#controls">Controls</a>
+        <a href="#modules">Modules</a>
+        <a href="#deliverables">Deliverables</a>
+        <a href="#outcomes">Outcomes</a>
+      </nav>
+
+      <article class="case-block" id="objective" data-reveal>
+        <h2>Objective</h2>
+        <p>
+          Design a Fusion Financials foundation that finance teams can understand, auditors can follow, and future workstreams (AP, AR, Assets, Cash, Tax, Intercompany, Reporting) can reuse without rework.
+        </p>
+        <p>
+          The blueprint prioritizes clear segment intent, ledger relationships, calendar discipline, and period-close ownership — so day-one configuration choices do not become month-end chaos later.
+        </p>
+      </article>
+
+      <article class="case-block" id="context" data-reveal>
+        <h2>Business context (generic scenario)</h2>
+        <p>
+          This case study assumes a multi-entity finance landscape that needs statutory and management views, a controlled month-end calendar, and reporting dimensions that stay stable as operational modules expand.
+        </p>
+        <ul>
+          <li>Multiple legal entities with shared and unique reporting needs</li>
+          <li>Need for clean trial balance, P&amp;L, and balance sheet extracts</li>
+          <li>Future P2P / O2C / assets / tax work expected on the same CoA</li>
+          <li>Finance wants clear ownership of period open/close and journal standards</li>
+        </ul>
+      </article>
+
+      <article class="case-block" id="scope" data-reveal>
+        <h2>Scope</h2>
+        <h3>In scope</h3>
+        <ul>
+          <li>Chart of Accounts segment model, value-set strategy, and hierarchy thinking</li>
+          <li>Primary ledger design, accounting calendar, and currency considerations</li>
+          <li>Legal entity / balancing segment alignment guidance</li>
+          <li>Period status model and month-end close calendar skeleton</li>
+          <li>Journal sources, categories, and control-account conventions</li>
+          <li>Opening balance / conversion readiness notes</li>
+          <li>Baseline OTBI / Smart View reporting readiness checklist</li>
+        </ul>
+        <h3>Out of scope (handled in later case studies)</h3>
+        <ul>
+          <li>Detailed AP invoice matching rules and AR cash application design</li>
+          <li>Full intercompany elimination automation in FCCS</li>
+          <li>EPBCS planning model build and ARCS profile inventory</li>
+        </ul>
+      </article>
+
+      <article class="case-block" id="approach" data-reveal>
+        <h2>Approach — phased blueprint</h2>
+        <ol class="phase-list">
+          <li>
+            <span class="phase-num">01</span>
+            <div>
+              <strong>Reporting &amp; process discovery</strong>
+              Capture statutory vs management needs, entity structure, and close pain points before locking CoA segments.
+            </div>
+          </li>
+          <li>
+            <span class="phase-num">02</span>
+            <div>
+              <strong>CoA &amp; enterprise structure design</strong>
+              Define segment purpose, value-set rules, balancing logic, and hierarchy ownership.
+            </div>
+          </li>
+          <li>
+            <span class="phase-num">03</span>
+            <div>
+              <strong>Ledger &amp; calendar model</strong>
+              Align ledgers, calendars, period statuses, and who can open/close periods.
+            </div>
+          </li>
+          <li>
+            <span class="phase-num">04</span>
+            <div>
+              <strong>Journal &amp; control standards</strong>
+              Document sources/categories, suspense handling, and control account expectations.
+            </div>
+          </li>
+          <li>
+            <span class="phase-num">05</span>
+            <div>
+              <strong>Close skeleton &amp; reporting readiness</strong>
+              Build a close calendar draft and a minimum reporting pack checklist for validation.
+            </div>
+          </li>
+          <li>
+            <span class="phase-num">06</span>
+            <div>
+              <strong>Decision log &amp; handover pack</strong>
+              Capture assumptions, open questions, and follow-on module impacts for AP/AR/Assets/Tax.
+            </div>
+          </li>
+        </ol>
+      </article>
+
+      <article class="case-block" id="decisions" data-reveal>
+        <h2>Key design decisions</h2>
+        <dl class="decision-list">
+          <div>
+            <dt>Segment intent before segment count</dt>
+            <dd>Every CoA segment must answer a reporting or control question. Extra segments are treated as cost, not convenience.</dd>
+          </div>
+          <div>
+            <dt>Natural account stays readable</dt>
+            <dd>Operational tags do not overload the natural account. Temporary coding needs belong in other segments or workarounds with an exit plan.</dd>
+          </div>
+          <div>
+            <dt>Ledger relationships are documented</dt>
+            <dd>Primary vs secondary / statutory vs management views are written as standards so later teams do not invent conflicting patterns.</dd>
+          </div>
+          <div>
+            <dt>Period control has named owners</dt>
+            <dd>Open, soft-close, and hard-close steps include who decides and what must be complete first.</dd>
+          </div>
+          <div>
+            <dt>Configuration is a decision log, not a checkbox list</dt>
+            <dd>Each major setup choice records why, impact, and dependent modules.</dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="case-block" id="walkthrough" data-reveal>
+        <h2>Sample walkthrough — foundation to first close</h2>
+        <ol>
+          <li>Confirm entity list and balancing requirements with finance process owners.</li>
+          <li>Draft CoA segments and sample value ranges; challenge each segment with report examples.</li>
+          <li>Map ledger set and calendar; define first open period and conversion cutover notes.</li>
+          <li>Define journal standards and a short list of control accounts to monitor.</li>
+          <li>Run a mock close checklist: subledger readiness → GL review → reporting extract.</li>
+          <li>Log open risks (missing hierarchy owners, unclear suspense rules, incomplete entity list).</li>
+        </ol>
+        <h3>Example validation scenarios</h3>
+        <ul>
+          <li>Post a simple expense journal and confirm segment combination rules behave as designed</li>
+          <li>Attempt period close with incomplete checklist items and confirm blocked steps are intentional</li>
+          <li>Generate trial balance / account analysis views for two entities and compare balancing</li>
+        </ul>
+      </article>
+
+      <article class="case-block" id="controls" data-reveal>
+        <h2>Controls, risks &amp; guardrails</h2>
+        <ul>
+          <li>No period close without named owner sign-off on critical subledger readiness</li>
+          <li>Suspense and clearing accounts monitored every close cycle</li>
+          <li>Value-set governance: who can add values, when, and with what approval</li>
+          <li>Risk: over-engineering CoA early — mitigated by reporting-first workshops</li>
+          <li>Risk: calendar/ledger mismatch across entities — mitigated by a single decision matrix</li>
+          <li>Risk: undocumented assumptions — mitigated by a living configuration decision log</li>
+        </ul>
+      </article>
+
+      <article class="case-block" id="modules" data-reveal>
+        <h2>Oracle modules in focus</h2>
+        <div class="module-chips">
+          <span>General Ledger</span>
+          <span>Chart of Accounts</span>
+          <span>Enterprise Structures</span>
+          <span>Ledgers &amp; Calendars</span>
+          <span>Period Close</span>
+          <span>OTBI</span>
+          <span>Smart View</span>
+          <span>Financial Reporting</span>
+        </div>
+      </article>
+
+      <article class="case-block" id="deliverables" data-reveal>
+        <h2>Deliverables from this knowledge project</h2>
+        <div class="deliverable-grid">
+          <span>CoA segment blueprint</span>
+          <span>Ledger &amp; calendar design map</span>
+          <span>Period close RACI skeleton</span>
+          <span>Journal standards one-pager</span>
+          <span>Configuration decision log</span>
+          <span>Reporting readiness checklist</span>
+          <span>Mock close validation script</span>
+          <span>Follow-on module impact notes</span>
+        </div>
+      </article>
+
+      <article class="case-block" id="outcomes" data-reveal>
+        <h2>Outcomes</h2>
+        <ul>
+          <li>A recruiter-readable blueprint that shows systems thinking, not buzzwords</li>
+          <li>A stable foundation story for GL, P2P, O2C, assets, tax, and intercompany design</li>
+          <li>Clear close ownership language finance teams can discuss in workshops</li>
+          <li>Reusable artifacts for UAT scenarios and implementation conversations</li>
+        </ul>
+        <h3>What this demonstrates</h3>
+        <p>
+          Ability to design Fusion Financials foundations with process discipline, configuration clarity, and reporting foresight — without claiming a specific employer or client.
+        </p>
+      </article>
+
+      <aside class="project-cta-band" data-reveal>
+        <h2>Want to discuss this blueprint?</h2>
+        <p>Open to conversations about Fusion Financials foundation design, CoA strategy, and period-close structure.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="mailto:kavyareddybindhu4@gmail.com" data-magnetic>Email Kavya</a>
+          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>All contact options</a>
+        </div>
+      </aside>
+    </section>
+
+    <div class="shell project-nav">
+      <a class="btn btn-ghost" href="../index.html#projects" data-magnetic>← All projects</a>
+      <a class="btn btn-primary" href="p2p-o2c-process-design.html" data-magnetic>Next: P2P &amp; O2C →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="footer-brand">Kavya Project</p>
+        <p class="footer-note">Knowledge portfolio · Oracle Fusion Financials &amp; EPM Cloud</p>
+      </div>
+      <p class="footer-copy">© <span data-year></span> Kavya Reddy</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
