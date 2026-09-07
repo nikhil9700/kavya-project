@@ -18,7 +18,7 @@
     localStorage.setItem("kavya-theme", theme);
     document.querySelector('meta[name="theme-color"]')?.setAttribute(
       "content",
-      theme === "dark" ? "#070b12" : "#eef3f8"
+      theme === "dark" ? "#070b12" : "#d8e2ee"
     );
   };
 
@@ -54,17 +54,33 @@
   const closeNav = () => {
     header?.classList.remove("is-open");
     toggle?.setAttribute("aria-expanded", "false");
+    body.classList.remove("nav-lock");
+  };
+
+  const openNav = () => {
+    header?.classList.add("is-open");
+    toggle?.setAttribute("aria-expanded", "true");
+    body.classList.add("nav-lock");
   };
 
   toggle?.addEventListener("click", () => {
-    const open = header?.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    const willOpen = !header?.classList.contains("is-open");
+    if (willOpen) openNav();
+    else closeNav();
   });
 
   nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeNav();
   });
+
+  window.addEventListener(
+    "resize",
+    () => {
+      if (window.matchMedia("(min-width: 981px)").matches) closeNav();
+    },
+    { passive: true }
+  );
 
   /* Custom cursor */
   const cursorDot = document.querySelector(".cursor-dot");
