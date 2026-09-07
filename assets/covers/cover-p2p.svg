@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="55%" stop-color="#102033"/>
+      <stop offset="100%" stop-color="#5eead4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <circle cx="980" cy="120" r="180" fill="#5eead4" opacity="0.18"/>
+  <circle cx="160" cy="520" r="220" fill="#5eead4" opacity="0.12"/>
+  <rect x="72" y="72" width="14" height="14" fill="#5eead4"/>
+  <text x="72" y="140" fill="#99f6e4" font-family="Segoe UI, Arial" font-size="28" letter-spacing="4">KAVYA PROJECT</text>
+  <text x="72" y="230" fill="#eef3f8" font-family="Segoe UI, Arial" font-size="54" font-weight="700">The P2P Exception Matrix Starter Kit</text>
+  <text x="72" y="560" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="22">Knowledge library · Oracle Fusion &amp; EPM</text>
+</svg>

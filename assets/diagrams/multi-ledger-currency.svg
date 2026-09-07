@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" rx="24" fill="#0d1420"/>
+  <rect x="40" y="50" width="200" height="90" rx="16" fill="#134e4a"/>
+  <rect x="280" y="50" width="200" height="90" rx="16" fill="#115e59"/>
+  <rect x="520" y="50" width="200" height="90" rx="16" fill="#0f766e"/>
+  <rect x="760" y="50" width="200" height="90" rx="16" fill="#14b8a6"/>
+  <path d="M240 95 H280 M480 95 H520 M720 95 H760" stroke="#2dd4bf" stroke-width="3"/>
+  <rect x="160" y="220" width="680" height="140" rx="20" fill="#121a28" stroke="#2dd4bf" stroke-opacity="0.35"/>
+  <text x="200" y="300" fill="#eef3f8" font-family="Segoe UI, Arial" font-size="28" font-weight="700">Multi-Ledger &amp; Multi-Currency Blueprint</text>
+  <text x="200" y="335" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="18">Process flow · control gates · reporting pack</text>
+</svg>

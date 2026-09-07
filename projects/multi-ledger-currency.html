@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Deep portfolio case study: Oracle FCCS consolidation structure, ownership, eliminations, and group close process." />
+  <meta name="description" content="Primary/secondary ledger relationships, currency representation, revaluation checkpoints, and reporting views for multi-entity finance landscapes." />
   <meta name="theme-color" content="#070b12" />
-  <title>FCCS Consolidation &amp; Close Process | Kavya Project</title>
+  <title>Multi-Ledger &amp; Multi-Currency Blueprint | Kavya Project</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,136 +40,115 @@
       </nav>
     </div>
   </header>
-
   <main id="main">
     <section class="project-hero">
       <div class="shell project-hero-inner" data-reveal>
         <p class="breadcrumb-nav"><a href="../index.html#projects">&larr; Back to all projects</a></p>
         <div class="project-kicker">
-          <span class="badge">Case study 05</span>
+          <span class="badge">Case study 12</span>
           <span>Portfolio knowledge project</span>
         </div>
-        <h1>FCCS Consolidation &amp; Close Process</h1>
-        <p class="section-lede">
-          A consolidation operating model covering entity hierarchy, ownership logic, eliminations, adjustments, and a repeatable FCCS close that connects to Fusion source close quality.
-        </p>
-        <p class="case-note">Knowledge / portfolio case study only. Not employment history or named client work.</p>
+        <h1>Multi-Ledger &amp; Multi-Currency Blueprint</h1>
+        <p class="section-lede">Primary/secondary ledger relationships, currency representation, revaluation checkpoints, and reporting views for multi-entity finance landscapes.</p>
+        <p class="case-note">Knowledge / portfolio case study only. Not employment history, not a named client engagement, and not a certification claim.</p>
         <div class="hero-cta-row">
           <a class="btn btn-primary" href="#objective" data-magnetic>Read full case study</a>
           <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>Contact Kavya</a>
         </div>
       </div>
     </section>
-
     <section class="shell case-grid">
       <nav class="case-toc" aria-label="On this page" data-reveal>
         <a href="#objective">Objective</a>
-        <a href="#structure">Entity structure</a>
-        <a href="#process">Close process</a>
-        <a href="#eliminations">Eliminations</a>
+        <a href="#context">Context</a>
+        <a href="#scope">Scope</a>
+        <a href="#approach">Approach</a>
+        <a href="#walkthrough">Walkthrough</a>
         <a href="#controls">Controls</a>
-        <a href="#modules">Modules</a>
         <a href="#deliverables">Deliverables</a>
         <a href="#outcomes">Outcomes</a>
+        <a href="#decisions">Design decisions</a>
+        <a href="#modules">Modules</a>
       </nav>
-
       <article class="case-block" id="objective" data-reveal>
         <h2>Objective</h2>
-        <p>
-          Design a consolidation and close process that produces reliable group results — with clear ownership logic, elimination discipline, and a calendar finance can run every period.
-        </p>
+        <p>Design ledger and currency structures that support statutory and management views without duplicate chaos.</p>
       </article>
-
-      <article class="case-block" id="structure" data-reveal>
-        <h2>Entity &amp; ownership design</h2>
-        <ul>
-          <li>Entity hierarchy aligned to statutory and management consolidation needs</li>
-          <li>Ownership / NCI considerations documented at a process level</li>
-          <li>Data readiness criteria from Fusion GL / subledgers into FCCS</li>
-          <li>Local close vs consolidation adjustment vs group reporting gates separated clearly</li>
-        </ul>
+      <article class="case-block" id="context" data-reveal>
+        <h2>Context</h2>
+        <p>Growing organizations often add ledgers reactively, creating reporting confusion and close delays.</p>
       </article>
-
-      <article class="case-block" id="process" data-reveal>
-        <h2>Consolidation close process</h2>
+      <article class="case-block" id="scope" data-reveal>
+        <h2>Scope</h2>
+        <p>Ledger set thinking, currency representation, revaluation timing, and management reporting alignment.</p>
+      </article>
+      <article class="case-block" id="approach" data-reveal>
+        <h2>Approach</h2>
+        <p>Map legal entities → choose primary ledgers → decide secondary needs → define currencies → set revaluation cadence → validate TB by ledger.</p>
         <ol class="phase-list">
-          <li><span class="phase-num">01</span><div><strong>Source readiness</strong> Confirm Fusion period quality and load completeness.</div></li>
-          <li><span class="phase-num">02</span><div><strong>Validate &amp; translate</strong> Review entity data, FX / translation checkpoints where applicable.</div></li>
-          <li><span class="phase-num">03</span><div><strong>Eliminations &amp; ownership</strong> Run and review elimination / ownership results.</div></li>
-          <li><span class="phase-num">04</span><div><strong>Adjustments</strong> Controlled journals with approval and audit trail expectations.</div></li>
-          <li><span class="phase-num">05</span><div><strong>Group review</strong> Variance analysis and lock steps before narrative packaging.</div></li>
+          <li><span class="phase-num">01</span><div><strong>Entity &amp; reporting needs</strong><span>Statutory vs management.</span></div></li>
+          <li><span class="phase-num">02</span><div><strong>Ledger model</strong><span>Primary/secondary choices.</span></div></li>
+          <li><span class="phase-num">03</span><div><strong>Currency model</strong><span>Entered, accounted, reporting.</span></div></li>
+          <li><span class="phase-num">04</span><div><strong>Revaluation design</strong><span>Timing and accounts.</span></div></li>
+          <li><span class="phase-num">05</span><div><strong>Reporting validation</strong><span>TB packs by ledger.</span></div></li>
         </ol>
+        <figure class="case-figure">
+          <img src="../assets/diagrams/multi-ledger-currency.svg" alt="Diagram for Multi-Ledger &amp; Multi-Currency Blueprint" width="1000" height="420" loading="lazy" />
+          <figcaption>Phased approach diagram for this knowledge project.</figcaption>
+        </figure>
       </article>
-
-      <article class="case-block" id="eliminations" data-reveal>
-        <h2>Eliminations checklist</h2>
-        <ul>
-          <li>Intercompany balance confirmation against source close outputs</li>
-          <li>Unresolved intercompany aging and escalation</li>
-          <li>Investment / equity elimination readiness notes</li>
-          <li>Post-elimination validation views for controllers</li>
-        </ul>
+      <article class="case-block" id="decisions" data-reveal>
+        <h2>Key design decisions</h2>
+        <dl class="decision-list">
+          <div><dt>Do not create a ledger for every report request</dt><dd>Use reporting tools where possible.</dd></div>
+          <div><dt>Document rate source once</dt><dd>Avoid silent FX differences.</dd></div>
+          <div><dt>Revaluation is a close gate</dt><dd>Not an optional afterthought.</dd></div>
+        </dl>
       </article>
-
+      <article class="case-block" id="walkthrough" data-reveal>
+        <h2>Walkthrough</h2>
+        <p>Post multi-currency journal → revalue → review unrealized gain/loss → report TB in ledger currency and reporting currency.</p>
+      </article>
       <article class="case-block" id="controls" data-reveal>
-        <h2>Controls &amp; risks</h2>
-        <ul>
-          <li>No consolidation lock while critical source entities remain incomplete</li>
-          <li>Adjustment journals require preparer / reviewer separation</li>
-          <li>Risk: treating FCCS as a dump of local books — mitigated by readiness gates</li>
-          <li>Risk: late eliminations — mitigated by calendar checkpoints tied to Case Study 03</li>
-        </ul>
+        <h2>Controls</h2>
+        <p>Ledger ownership matrix; revaluation before close gate; FX rate source documented.</p>
       </article>
-
       <article class="case-block" id="modules" data-reveal>
         <h2>Oracle modules in focus</h2>
         <div class="module-chips">
-          <span>FCCS</span>
-          <span>Consolidation</span>
-          <span>Eliminations</span>
-          <span>Ownership</span>
-          <span>Journals &amp; Adjustments</span>
-          <span>Close Manager tasks</span>
+          <span>GL</span>
+          <span>Ledgers</span>
+          <span>Currency</span>
+          <span>OTBI</span>
         </div>
       </article>
-
       <article class="case-block" id="deliverables" data-reveal>
         <h2>Deliverables</h2>
         <div class="deliverable-grid">
-          <span>Entity hierarchy design</span>
-          <span>Ownership process notes</span>
-          <span>Elimination checklist</span>
-          <span>Consolidation calendar</span>
-          <span>Source-to-FCCS bridge</span>
-          <span>Adjustment policy draft</span>
+          <span>Ledger matrix</span>
+          <span>currency matrix</span>
+          <span>revaluation checklist</span>
+          <span>sample TB views.</span>
         </div>
       </article>
-
       <article class="case-block" id="outcomes" data-reveal>
         <h2>Outcomes</h2>
-        <ul>
-          <li>A consolidation narrative that demonstrates group close literacy</li>
-          <li>Checklists connecting Fusion close quality to consolidated outcomes</li>
-          <li>Foundation for ARCS and Narrative Reporting storytelling</li>
-        </ul>
+        <p>Clear story for multi-ledger / multi-currency design interviews and workshops.</p>
       </article>
-
       <aside class="project-cta-band" data-reveal>
-        <h2>Discuss FCCS close design</h2>
-        <p>Open to conversations about consolidation calendars, eliminations, and group reporting gates.</p>
+        <h2>Want to discuss this blueprint?</h2>
+        <p>Open to conversations about Oracle Fusion Financials and EPM Cloud process design.</p>
         <div class="hero-cta-row">
           <a class="btn btn-primary" href="mailto:kavyareddybindhu4@gmail.com" data-magnetic>Email Kavya</a>
           <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>All contact options</a>
         </div>
       </aside>
     </section>
-
     <div class="shell project-nav">
-      <a class="btn btn-ghost" href="epm-planning-budgeting.html" data-magnetic>← Previous</a>
-      <a class="btn btn-primary" href="arcs-narrative-reporting.html" data-magnetic>Next: ARCS &amp; Narrative →</a>
+      <a class="btn btn-ghost" href="subledger-accounting-design.html" data-magnetic>&larr; Previous: SLA Design</a>
+      <a class="btn btn-primary" href="fusion-security-roles.html" data-magnetic>Next: Security Roles →</a>
     </div>
   </main>
-
   <footer class="site-footer">
     <div class="shell footer-inner">
       <div>

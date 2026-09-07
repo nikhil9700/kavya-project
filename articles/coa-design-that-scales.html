@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="How to shape CoA segments for reporting, control, and growth — without over-engineering on day one." />
+  <meta name="theme-color" content="#070b12" />
+  <title>Chart of Accounts Design That Scales | Kavya Project</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="page-project is-loaded">
+  <div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="orb-canvas" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" data-magnetic>
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Kavya <em>Project</em></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="sr-only">Menu</span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#expertise">Expertise</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#insights">Insights</a>
+        <a href="../index.html#learning">Learning</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <a class="nav-cta" href="../index.html#contact" data-magnetic>Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="project-hero">
+      <div class="shell project-hero-inner" data-reveal>
+        <p class="breadcrumb-nav"><a href="../index.html#insights">&larr; Back to insights</a></p>
+        <div class="project-kicker">
+          <span class="badge">Fusion Financials</span>
+          <span>9 min read</span>
+        </div>
+        <h1>Chart of Accounts Design That Scales</h1>
+        <p class="section-lede">How to shape CoA segments for reporting, control, and growth — without over-engineering on day one.</p>
+        <p class="case-note">Insight article from the Kavya Project knowledge library. Educational content only — not employment history or certification claims.</p>
+      </div>
+    </section>
+    <section class="shell case-grid article-layout">
+      <figure class="article-hero-figure" data-reveal>
+        <img src="../assets/covers/cover-coa.svg" alt="" width="1200" height="630" />
+      </figure>
+      <article class="case-block" data-reveal>
+        <h2>Why CoA decisions feel permanent</h2>
+        <p>The Chart of Accounts is one of the hardest structures to change later. A segment added &#x27;just in case&#x27; becomes permanent complexity. A segment missing for management reporting becomes a monthly spreadsheet tax. Good CoA design balances today&#x27;s close with tomorrow&#x27;s questions.</p>
+      </article>
+      <article class="case-block" data-reveal>
+        <h2>Start from decisions, not from screens</h2>
+        <p>Before touching value sets, list the decisions finance must answer: legal entity performance, department spend, product/contribution views, project tracking, and statutory needs. Each decision should map to a segment, hierarchy, or reporting workaround — deliberately.</p>
+      </article>
+      <article class="case-block" data-reveal>
+        <h2>A practical segment test</h2>
+        <p>For every proposed segment ask: Can I name five real reports that need it? Who owns values? What happens if it is wrong on an invoice? If those answers are weak, keep it out of CoA and handle it elsewhere.</p>
+      </article>
+      <article class="case-block" data-reveal>
+        <h2>Hierarchy ownership is half the design</h2>
+        <p>Segments fail when hierarchies are orphaned. Assign an owner for each hierarchy, a request path for new values, and a publish cadence. This is where EDM thinking connects to GL reality.</p>
+      </article>
+      <article class="case-block" data-reveal>
+        <h2>Workshop agenda you can reuse</h2>
+        <p>1) Decision inventory 2) Segment candidates 3) Kill list 4) Value examples 5) Hierarchy owners 6) Open questions log. End with a one-page CoA intent statement everyone can explain.</p>
+      </article>
+      <aside class="project-cta-band" data-reveal>
+        <h2>Explore related case studies</h2>
+        <p>These insights connect directly to the portfolio project library.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="../index.html#projects" data-magnetic>Browse projects</a>
+          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>Contact Kavya</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="footer-brand">Kavya Project</p>
+        <p class="footer-note">Knowledge portfolio · Oracle Fusion Financials &amp; EPM Cloud</p>
+      </div>
+      <p class="footer-copy">© <span data-year></span> Kavya Reddy</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="A complete fixed-asset process blueprint — from capitalization thresholds and category design to depreciation books, transfers, retirements, and period-end asset reporting." />
+  <meta name="theme-color" content="#070b12" />
+  <title>Fixed Assets Lifecycle Design | Kavya Project</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="page-project is-loaded">
+  <div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="orb-canvas" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" data-magnetic>
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Kavya <em>Project</em></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="sr-only">Menu</span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#expertise">Expertise</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#insights">Insights</a>
+        <a href="../index.html#learning">Learning</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <a class="nav-cta" href="../index.html#contact" data-magnetic>Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="project-hero">
+      <div class="shell project-hero-inner" data-reveal>
+        <p class="breadcrumb-nav"><a href="../index.html#projects">&larr; Back to all projects</a></p>
+        <div class="project-kicker">
+          <span class="badge">Case study 07</span>
+          <span>Portfolio knowledge project</span>
+        </div>
+        <h1>Fixed Assets Lifecycle Design</h1>
+        <p class="section-lede">A complete fixed-asset process blueprint — from capitalization thresholds and category design to depreciation books, transfers, retirements, and period-end asset reporting.</p>
+        <p class="case-note">Knowledge / portfolio case study only. Not employment history, not a named client engagement, and not a certification claim.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="#objective" data-magnetic>Read full case study</a>
+          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>Contact Kavya</a>
+        </div>
+      </div>
+    </section>
+    <section class="shell case-grid">
+      <nav class="case-toc" aria-label="On this page" data-reveal>
+        <a href="#objective">Objective</a>
+        <a href="#context">Context</a>
+        <a href="#scope">Scope</a>
+        <a href="#approach">Approach</a>
+        <a href="#walkthrough">Walkthrough</a>
+        <a href="#controls">Controls</a>
+        <a href="#deliverables">Deliverables</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#decisions">Design decisions</a>
+        <a href="#modules">Modules</a>
+      </nav>
+      <article class="case-block" id="objective" data-reveal>
+        <h2>Objective</h2>
+        <p>Design a Fixed Assets foundation that finance and operations can run every period without suspense buildup, missed capitalizations, or unclear retirement ownership.</p>
+      </article>
+      <article class="case-block" id="context" data-reveal>
+        <h2>Context</h2>
+        <p>Multi-entity organizations often struggle with inconsistent asset categories, unclear CIP rules, and depreciation books that do not match reporting needs. This case study models a clean lifecycle.</p>
+      </article>
+      <article class="case-block" id="scope" data-reveal>
+        <h2>Scope</h2>
+        <p>In scope: capitalization policy checkpoints, category &amp; book design, addition/transfer/retirement flows, depreciation calendars, and asset reporting pack. Out of scope: detailed tax depreciation engine configuration for every jurisdiction.</p>
+      </article>
+      <article class="case-block" id="approach" data-reveal>
+        <h2>Approach</h2>
+        <p>Workshop capitalization thresholds → map categories to GL accounts → define books &amp; methods → design CIP-to-asset conversion → document transfers/retirements → build period checklist → validate with sample assets.</p>
+        <ol class="phase-list">
+          <li><span class="phase-num">01</span><div><strong>Policy &amp; threshold discovery</strong><span>Agree capitalization rules, useful life defaults, and CIP treatment.</span></div></li>
+          <li><span class="phase-num">02</span><div><strong>Category &amp; account mapping</strong><span>Link categories to natural accounts and cost centers.</span></div></li>
+          <li><span class="phase-num">03</span><div><strong>Book &amp; calendar design</strong><span>Corporate vs secondary books, methods, and calendars.</span></div></li>
+          <li><span class="phase-num">04</span><div><strong>Lifecycle process design</strong><span>Additions, adjustments, transfers, retirements.</span></div></li>
+          <li><span class="phase-num">05</span><div><strong>Close &amp; reporting pack</strong><span>Period checklist + rollforward extracts.</span></div></li>
+        </ol>
+        <figure class="case-figure">
+          <img src="../assets/diagrams/fixed-assets-lifecycle.svg" alt="Diagram for Fixed Assets Lifecycle Design" width="1000" height="420" loading="lazy" />
+          <figcaption>Phased approach diagram for this knowledge project.</figcaption>
+        </figure>
+      </article>
+      <article class="case-block" id="decisions" data-reveal>
+        <h2>Key design decisions</h2>
+        <dl class="decision-list">
+          <div><dt>Single corporate book first</dt><dd>Stabilize corporate reporting before expanding tax books.</dd></div>
+          <div><dt>CIP as controlled staging</dt><dd>Keep CIP visible and gated before capitalization.</dd></div>
+          <div><dt>Category ownership</dt><dd>Finance owns categories; operations request via change log.</dd></div>
+        </dl>
+      </article>
+      <article class="case-block" id="walkthrough" data-reveal>
+        <h2>Walkthrough</h2>
+        <p>1) Capture a CIP invoice and track WIP. 2) Capitalize to asset with correct category. 3) Run depreciation for two periods. 4) Transfer between cost centers. 5) Partially retire and confirm gain/loss treatment. 6) Extract asset rollforward report.</p>
+      </article>
+      <article class="case-block" id="controls" data-reveal>
+        <h2>Controls</h2>
+        <p>No capitalization below policy without exception log; category changes require finance approval; depreciation cannot close until unposted assets are cleared; retirements require supporting evidence.</p>
+      </article>
+      <article class="case-block" id="modules" data-reveal>
+        <h2>Oracle modules in focus</h2>
+        <div class="module-chips">
+          <span>Fixed Assets</span>
+          <span>GL</span>
+          <span>Payables</span>
+          <span>OTBI</span>
+        </div>
+      </article>
+      <article class="case-block" id="deliverables" data-reveal>
+        <h2>Deliverables</h2>
+        <div class="deliverable-grid">
+          <span>Asset category matrix</span>
+          <span>CIP conversion checklist</span>
+          <span>depreciation calendar notes</span>
+          <span>UAT asset scenarios</span>
+          <span>OTBI rollforward starter pack</span>
+          <span>decision log.</span>
+        </div>
+      </article>
+      <article class="case-block" id="outcomes" data-reveal>
+        <h2>Outcomes</h2>
+        <p>Shows end-to-end Fixed Assets thinking — process, configuration intent, controls, and reporting — ready for workshop or interview deep-dive.</p>
+      </article>
+      <aside class="project-cta-band" data-reveal>
+        <h2>Want to discuss this blueprint?</h2>
+        <p>Open to conversations about Oracle Fusion Financials and EPM Cloud process design.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="mailto:kavyareddybindhu4@gmail.com" data-magnetic>Email Kavya</a>
+          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>All contact options</a>
+        </div>
+      </aside>
+    </section>
+    <div class="shell project-nav">
+      <a class="btn btn-ghost" href="arcs-narrative-reporting.html" data-magnetic>&larr; Previous: ARCS</a>
+      <a class="btn btn-primary" href="cash-management-bank-rec.html" data-magnetic>Next: Cash Management →</a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="footer-brand">Kavya Project</p>
+        <p class="footer-note">Knowledge portfolio · Oracle Fusion Financials &amp; EPM Cloud</p>
+      </div>
+      <p class="footer-copy">© <span data-year></span> Kavya Reddy</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

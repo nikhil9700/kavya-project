@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Bank account structure, statement import patterns, reconciliation matching rules, and cash visibility for controllers — designed so daily cash and month-end reconcile without chaos." />
+  <meta name="theme-color" content="#070b12" />
+  <title>Cash Management &amp; Bank Reconciliation Design | Kavya Project</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="page-project is-loaded">
+  <div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="orb-canvas" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html" data-magnetic>
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Kavya <em>Project</em></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="sr-only">Menu</span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#expertise">Expertise</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#insights">Insights</a>
+        <a href="../index.html#learning">Learning</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <a class="nav-cta" href="../index.html#contact" data-magnetic>Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="project-hero">
+      <div class="shell project-hero-inner" data-reveal>
+        <p class="breadcrumb-nav"><a href="../index.html#projects">&larr; Back to all projects</a></p>
+        <div class="project-kicker">
+          <span class="badge">Case study 08</span>
+          <span>Portfolio knowledge project</span>
+        </div>
+        <h1>Cash Management &amp; Bank Reconciliation Design</h1>
+        <p class="section-lede">Bank account structure, statement import patterns, reconciliation matching rules, and cash visibility for controllers — designed so daily cash and month-end reconcile without chaos.</p>
+        <p class="case-note">Knowledge / portfolio case study only. Not employment history, not a named client engagement, and not a certification claim.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="#objective" data-magnetic>Read full case study</a>
+          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>Contact Kavya</a>
+        </div>
+      </div>
+    </section>
+    <section class="shell case-grid">
+      <nav class="case-toc" aria-label="On this page" data-reveal>
+        <a href="#objective">Objective</a>
+        <a href="#context">Context</a>
+        <a href="#scope">Scope</a>
+        <a href="#approach">Approach</a>
+        <a href="#walkthrough">Walkthrough</a>
+        <a href="#controls">Controls</a>
+        <a href="#deliverables">Deliverables</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#decisions">Design decisions</a>
+        <a href="#modules">Modules</a>
+      </nav>
+      <article class="case-block" id="objective" data-reveal>
+        <h2>Objective</h2>
+        <p>Build a cash and bank reconciliation design that gives daily cash clarity and a controlled month-end bank-to-book close.</p>
+      </article>
+      <article class="case-block" id="context" data-reveal>
+        <h2>Context</h2>
+        <p>Finance teams often lose time to unmatched statements, unclear bank account ownership, and cash positions that do not agree to GL.</p>
+      </article>
+      <article class="case-block" id="scope" data-reveal>
+        <h2>Scope</h2>
+        <p>Bank account model, statement intake, auto-match vs manual match, outstanding item aging, and cash position reporting. Out of scope: treasury deal management.</p>
+      </article>
+      <article class="case-block" id="approach" data-reveal>
+        <h2>Approach</h2>
+        <p>Map legal entities to bank accounts → define GL cash accounts → design statement import cadence → set matching tolerance → build exception queues → publish daily cash view.</p>
+        <ol class="phase-list">
+          <li><span class="phase-num">01</span><div><strong>Account &amp; ownership map</strong><span>Entity, bank, GL account, and owner.</span></div></li>
+          <li><span class="phase-num">02</span><div><strong>Statement design</strong><span>Formats, cadence, and import validation.</span></div></li>
+          <li><span class="phase-num">03</span><div><strong>Matching rules</strong><span>Auto vs manual, tolerances, references.</span></div></li>
+          <li><span class="phase-num">04</span><div><strong>Exception workflow</strong><span>Aging, escalation, and clearance.</span></div></li>
+          <li><span class="phase-num">05</span><div><strong>Cash reporting</strong><span>Daily position + month-end pack.</span></div></li>
+        </ol>
+        <figure class="case-figure">
+          <img src="../assets/diagrams/cash-management-bank-rec.svg" alt="Diagram for Cash Management &amp; Bank Reconciliation Design" width="1000" height="420" loading="lazy" />
+          <figcaption>Phased approach diagram for this knowledge project.</figcaption>
+        </figure>
+      </article>
+      <article class="case-block" id="decisions" data-reveal>
+        <h2>Key design decisions</h2>
+        <dl class="decision-list">
+          <div><dt>One GL cash account per bank account where possible</dt><dd>Simplifies reconciliation ownership.</dd></div>
+          <div><dt>Match on reference + amount first</dt><dd>Reduce false positives from amount-only matching.</dd></div>
+          <div><dt>Separate operational cash view from period lock</dt><dd>Daily ops can move while close remains controlled.</dd></div>
+        </dl>
+      </article>
+      <article class="case-block" id="walkthrough" data-reveal>
+        <h2>Walkthrough</h2>
+        <p>Import a sample statement → auto-match receipts/payments → age unmatched items → clear a manual match → lock period bank rec → extract cash by entity.</p>
+      </article>
+      <article class="case-block" id="controls" data-reveal>
+        <h2>Controls</h2>
+        <p>Every bank account has an owner; unmatched items older than SLA escalate; no period close with material unmatched balance without sign-off.</p>
+      </article>
+      <article class="case-block" id="modules" data-reveal>
+        <h2>Oracle modules in focus</h2>
+        <div class="module-chips">
+          <span>Cash Management</span>
+          <span>GL</span>
+          <span>AR</span>
+          <span>AP</span>
+          <span>OTBI</span>
+        </div>
+      </article>
+      <article class="case-block" id="deliverables" data-reveal>
+        <h2>Deliverables</h2>
+        <div class="deliverable-grid">
+          <span>Bank account matrix</span>
+          <span>matching rule sheet</span>
+          <span>exception playbook</span>
+          <span>daily cash dashboard sketch</span>
+          <span>UAT statement pack.</span>
+        </div>
+      </article>
+      <article class="case-block" id="outcomes" data-reveal>
+        <h2>Outcomes</h2>
+        <p>Demonstrates practical Cash Management design that connects operations, GL, and controller reporting.</p>
+      </article>
+      <aside class="project-cta-band" data-reveal>
+        <h2>Want to discuss this blueprint?</h2>
+        <p>Open to conversations about Oracle Fusion Financials and EPM Cloud process design.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="mailto:kavyareddybindhu4@gmail.com" data-magnetic>Email Kavya</a>
+          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>All contact options</a>
+        </div>
+      </aside>
+    </section>
+    <div class="shell project-nav">
+      <a class="btn btn-ghost" href="fixed-assets-lifecycle.html" data-magnetic>&larr; Previous: Fixed Assets</a>
+      <a class="btn btn-primary" href="tax-config-alignment.html" data-magnetic>Next: Tax Alignment →</a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="footer-brand">Kavya Project</p>
+        <p class="footer-note">Knowledge portfolio · Oracle Fusion Financials &amp; EPM Cloud</p>
+      </div>
+      <p class="footer-copy">© <span data-year></span> Kavya Reddy</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
