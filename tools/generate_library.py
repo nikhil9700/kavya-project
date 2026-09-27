@@ -745,7 +745,6 @@ def project_html(p: dict) -> str:
           <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
           <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
         </button>
-        <a class="nav-cta" href="../index.html#contact" data-magnetic>Contact</a>
       </nav>
     </div>
   </header>
@@ -762,7 +761,6 @@ def project_html(p: dict) -> str:
         <p class="case-note">{NOTE}</p>
         <div class="hero-cta-row">
           <a class="btn btn-primary" href="#objective" data-magnetic>Read full case study</a>
-          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>Contact Kavya</a>
         </div>
       </div>
     </section>
@@ -775,8 +773,7 @@ def project_html(p: dict) -> str:
         <h2>Want to discuss this blueprint?</h2>
         <p>Open to conversations about Oracle Fusion Financials and EPM Cloud process design.</p>
         <div class="hero-cta-row">
-          <a class="btn btn-primary" href="mailto:kavyareddybindhu4@gmail.com" data-magnetic>Email Kavya</a>
-          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>All contact options</a>
+          <a class="btn btn-primary" href="../index.html#projects" data-magnetic>Browse projects</a>
         </div>
       </aside>
     </section>
@@ -848,7 +845,6 @@ def article_html(a: dict) -> str:
           <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
           <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
         </button>
-        <a class="nav-cta" href="../index.html#contact" data-magnetic>Contact</a>
       </nav>
     </div>
   </header>
@@ -875,7 +871,6 @@ def article_html(a: dict) -> str:
         <p>These insights connect directly to the portfolio project library.</p>
         <div class="hero-cta-row">
           <a class="btn btn-primary" href="../index.html#projects" data-magnetic>Browse projects</a>
-          <a class="btn btn-ghost" href="../index.html#contact" data-magnetic>Contact Kavya</a>
         </div>
       </aside>
     </section>
